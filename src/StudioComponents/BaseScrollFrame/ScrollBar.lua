@@ -1,7 +1,7 @@
 -- Writen by @boatbomber
 -- Modified by @mvyasu
 
-local Plugin = script:FindFirstAncestorWhichIsA("Plugin")
+local Plugin = script:FindFirstAncestorWhichIsA("Script") or script:FindFirstAncestorWhichIsA("LocalScript")
 local Fusion = require(Plugin:FindFirstChild("Fusion", true))
 
 local StudioComponents = script.Parent.Parent
