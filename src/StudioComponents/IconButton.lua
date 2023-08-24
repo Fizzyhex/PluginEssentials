@@ -28,6 +28,8 @@ local COMPONENT_ONLY_PROPERTIES = {
 	"Activated",
 	"Enabled",
 	"Icon",
+	"ImageRectOffset",
+	"ImageRectSize",
 }
 
 type styleGuideColorInput = (Enum.StudioStyleGuideColor | types.StateObject<Enum.StudioStyleGuideColor>)?
@@ -106,6 +108,8 @@ return function(props: IconButtonProperties): TextButton
 					ScaleType = Enum.ScaleType.Fit,
 					ImageColor3 = getMotionState(themeProvider:GetColor(props.ImageColorStyle or Enum.StudioStyleGuideColor.ButtonText, modifier), "Spring", 40),
 					Image = props.Icon,
+					ImageRectOffset = props.ImageRectOffset,
+					ImageRectSize = props.ImageRectSize,
 				},
 			},
 		}
