@@ -89,7 +89,13 @@ return function(props: TextInputProperties): TextLabel
 			[Out "AbsoluteSize"] = absoluteTextBoxSize,
 
 			[OnEvent "Focused"] = function() isFocused:set(true) end,
-			[OnEvent "FocusLost"] = function() isFocused:set(false) end,
+			[OnEvent "FocusLost"] = function(enterPressed, inputObject)
+				isFocused:set(false)
+
+				if props.OnFocusLost then
+					props.OnFocusLost(enterPressed, inputObject)
+				end
+			end,
 
 			[OnEvent "InputBegan"] = function(inputObject)
 				if not unwrap(isEnabled) then
