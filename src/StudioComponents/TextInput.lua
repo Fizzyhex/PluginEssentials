@@ -31,7 +31,8 @@ local PLACEHOLDER_TEXT_COLOR = Color3.fromRGB(102, 102, 102)
 
 local COMPONENT_ONLY_PROPERTIES = {
 	"Enabled",
-	"ClearTextOnFocus"
+	"ClearTextOnFocus",
+	"OnFocusLost",
 }
 
 export type TextInputProperties = {
