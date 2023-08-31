@@ -22,6 +22,7 @@ type PluginGuiProperties = {
 	ForceInitialEnabled: boolean,
 	FloatingSize: Vector2,
 	MinimumSize: Vector2,
+	BindToClose: () -> ()?,
 	[any]: any,
 }
 
