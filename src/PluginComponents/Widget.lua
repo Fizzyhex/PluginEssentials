@@ -10,7 +10,8 @@ local COMPONENT_ONLY_PROPERTIES = {
 	"ForceInitialEnabled",
 	"FloatingSize",
 	"MinimumSize",
-	"Plugin"
+	"Plugin",
+	"BindToClose"
 }
 
 type PluginGuiProperties = {
@@ -35,6 +36,10 @@ return function(props: PluginGuiProperties)
 			props.MinimumSize.X, props.MinimumSize.Y
 		)
 	)
+
+	if props.BindToClose then
+		newWidget:BindToClose(props.BindToClose)  
+	end
 
 	for _,propertyName in pairs(COMPONENT_ONLY_PROPERTIES) do
 		props[propertyName] = nil
